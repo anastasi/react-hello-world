@@ -41,6 +41,7 @@ class App extends Component {
     let output = null;
     let form = (
       <Form
+        submitted={this.handleSubmit}
         firstname={this.state.firstname}
         lastname={this.state.lastname}
         changed={this.handleChange}
@@ -57,9 +58,7 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <form onSubmit={this.handleSubmit}>
         {form}
-        </form>
         {output}
       </div>
     );
