@@ -39,25 +39,26 @@ class App extends Component {
 
   render() {
     let output = null;
+    let form = (
+      <Form
+        firstname={this.state.firstname}
+        lastname={this.state.lastname}
+        changed={this.handleChange}
+      />
+    );
     if(this.state.showOutput){
       output = (
         <Output
         firstname={this.state.firstname}
         lastname={this.state.lastname}
       />
-      )
-      
+      );
+      form = null
     }
-
     return (
       <div className="App">
         <form onSubmit={this.handleSubmit}>
-          <Form
-            firstname={this.state.firstname}
-            lastname={this.state.lastname}
-            changed={this.handleChange}
-          />
-          
+        {form}
         </form>
         {output}
       </div>
